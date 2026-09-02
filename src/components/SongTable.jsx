@@ -25,7 +25,7 @@ export default function SongTable({ songs, chosenSongId, onChoose }) {
   const columns = useMemo(() => [
     {
       accessorKey: 'title',
-      header: 'Song',
+      header: 'Track Title',
       cell: ({ row, getValue }) => (
         <Box>
           <Typography fontWeight={700}>{getValue()}</Typography>
@@ -33,14 +33,14 @@ export default function SongTable({ songs, chosenSongId, onChoose }) {
         </Box>
       ),
     },
-    { accessorKey: 'artist', header: 'Artist' },
+    { accessorKey: 'artist', header: 'Artist Name' },
     {
       accessorKey: 'genre',
       header: 'Genre',
       cell: ({ getValue }) => <Chip label={getValue()} size="small" variant="outlined" />,
     },
-    { accessorKey: 'score', header: 'Score' },
-    { accessorKey: 'role', header: 'Added as' },
+    { accessorKey: 'score', header: 'Rating / BPM' },
+    { accessorKey: 'role', header: 'User Role' },
   ], [])
 
   // TanStack Table provides the rows and page controls used below.

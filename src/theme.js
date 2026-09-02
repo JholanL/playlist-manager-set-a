@@ -4,22 +4,28 @@ export const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#1DB954',
-      light: '#32D76A',
-      contrastText: '#07140B',
+      main: '#8B7CFF',
+      light: '#A99EFF',
+      contrastText: '#0D1021',
+    },
+    secondary: {
+      main: '#FF7A8A',
     },
     background: {
-      default: '#0B0F0C',
-      paper: '#151A17',
+      default: '#0D1021',
+      paper: '#171A33',
     },
     text: {
-      primary: '#F5F7F5',
-      secondary: '#A7B0AA',
+      primary: '#F7F7FC',
+      secondary: '#A8ACC7',
     },
     error: {
-      main: '#FF6B6B',
+      main: '#FF667A',
     },
-    divider: '#303832',
+    success: {
+      main: '#44D7B6',
+    },
+    divider: '#34395F',
   },
   shape: {
     borderRadius: 14,

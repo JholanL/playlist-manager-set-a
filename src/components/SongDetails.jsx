@@ -7,7 +7,7 @@ export default function SongDetails({ song }) {
     return (
       <Paper className="song-details empty-details" variant="outlined">
         <AlbumRoundedIcon />
-        <Typography color="text.secondary">Choose a song to see its details.</Typography>
+        <Typography color="text.secondary">Choose a track to see its details.</Typography>
       </Paper>
     )
   }
@@ -19,7 +19,7 @@ export default function SongDetails({ song }) {
         <span />
       </Box>
 
-      <Typography variant="overline" color="primary">Chosen song</Typography>
+      <Typography variant="overline" color="primary">Chosen Track</Typography>
       <Typography component="h3" variant="h4" fontWeight={800}>{song.title}</Typography>
       <Typography color="text.secondary">{song.artist}</Typography>
 
@@ -34,11 +34,11 @@ export default function SongDetails({ song }) {
       <Divider sx={{ my: 2 }} />
 
       <Box className="detail-row">
-        <span><EqualizerRoundedIcon /> Score</span>
+        <span><EqualizerRoundedIcon /> Rating / BPM</span>
         <strong>{song.score}/100</strong>
       </Box>
       <Box className="detail-row">
-        <span>Music label</span>
+        <span>Record Label Name</span>
         <strong>{song.label}</strong>
       </Box>
     </Paper>

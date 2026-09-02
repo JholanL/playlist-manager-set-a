@@ -50,15 +50,15 @@ function App() {
           <Box className="logo"><HeadphonesRoundedIcon /></Box>
           <Box>
             <Typography component="h1" variant="h5" fontWeight={800}>My Playlist</Typography>
-            <Typography variant="body2" color="text.secondary">Keep your favorite songs in one place.</Typography>
+            <Typography variant="body2" color="text.secondary">Keep your favorite tracks in one place.</Typography>
           </Box>
         </Box>
 
         <Box component="main" className="main">
           <Box className="intro">
-            <Typography variant="overline" color="primary">New song</Typography>
-            <Typography component="h2" variant="h3">Add a song</Typography>
-            <Typography color="text.secondary">Fill in the details below to save a song.</Typography>
+            <Typography variant="overline" color="primary">New track</Typography>
+            <Typography component="h2" variant="h3">Add a Track</Typography>
+            <Typography color="text.secondary">Fill in the details below to save a track.</Typography>
           </Box>
 
           {message && <Alert severity="success" onClose={() => setMessage('')} sx={{ mb: 2 }}>{message}</Alert>}
@@ -66,11 +66,11 @@ function App() {
 
           <Box className="list-heading">
             <Box>
-              <Typography component="h2" variant="h4" fontWeight={800}>Song list</Typography>
-              <Typography color="text.secondary">Choose a song by clicking its row.</Typography>
+              <Typography component="h2" variant="h4" fontWeight={800}>Track List</Typography>
+              <Typography color="text.secondary">Choose a track by clicking its row.</Typography>
             </Box>
             <Box className="list-actions">
-              <Chip label={`${shownSongs.length} songs`} color="primary" variant="outlined" />
+              <Chip label={`${shownSongs.length} tracks`} color="primary" variant="outlined" />
               <SongFilter value={genre} onChange={changeGenre} />
             </Box>
           </Box>

@@ -33,7 +33,7 @@ function checkSong(song) {
   if (song.score === '' || Number(song.score) < 1 || Number(song.score) > 100) {
     errors.score = 'Enter a number from 1 to 100.'
   }
-  if (!song.label.trim()) errors.label = 'Enter the music label.'
+  if (!song.label.trim()) errors.label = 'Enter the record label.'
   if (!song.role) errors.role = 'Choose one.'
 
   return errors
@@ -67,13 +67,13 @@ export default function SongForm({ onAdd }) {
   return (
     <Paper component="form" className="song-form" variant="outlined" onSubmit={submitSong} noValidate>
       <Box className="form-title">
-        <Typography variant="h5" fontWeight={750}>Song details</Typography>
+        <Typography variant="h5" fontWeight={750}>Track Details</Typography>
         <Typography variant="body2" color="text.secondary">Please complete every field.</Typography>
       </Box>
 
       <Box className="fields">
         <TextField
-          label="Song title"
+          label="Track Title"
           value={song.title}
           onChange={changeField('title')}
           error={visited.title && Boolean(errors.title)}
@@ -94,7 +94,7 @@ export default function SongForm({ onAdd }) {
         </TextField>
 
         <TextField
-          label="Singer or artist"
+          label="Artist Name"
           value={song.artist}
           onChange={changeField('artist')}
           error={visited.artist && Boolean(errors.artist)}
@@ -102,7 +102,7 @@ export default function SongForm({ onAdd }) {
         />
 
         <TextField
-          label="Score"
+          label="Rating / BPM"
           type="number"
           value={song.score}
           onChange={changeField('score')}
@@ -112,7 +112,7 @@ export default function SongForm({ onAdd }) {
         />
 
         <TextField
-          label="Music label"
+          label="Record Label Name"
           value={song.label}
           onChange={changeField('label')}
           error={visited.label && Boolean(errors.label)}
@@ -120,7 +120,7 @@ export default function SongForm({ onAdd }) {
         />
 
         <FormControl error={visited.role && Boolean(errors.role)}>
-          <FormLabel>Added as</FormLabel>
+          <FormLabel>User Role</FormLabel>
           <RadioGroup row value={song.role} onChange={changeField('role')}>
             <FormControlLabel value="Creator" control={<Radio />} label="Creator" />
             <FormControlLabel value="Listener" control={<Radio />} label="Listener" />
@@ -130,7 +130,7 @@ export default function SongForm({ onAdd }) {
       </Box>
 
       <Button type="submit" variant="contained" size="large" startIcon={<AddRoundedIcon />}>
-        Add song
+        Add Track
       </Button>
     </Paper>
   )
