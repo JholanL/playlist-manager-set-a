@@ -5,4 +5,13 @@ export const startingSongs = [
   { id: 'song-4', title: 'Static Hearts', genre: 'Rock', artist: 'Red Signal', score: 76, label: 'Voltage Records', role: 'Listener' },
   { id: 'song-5', title: 'Paper Planes', genre: 'Indie', artist: 'Sunday Cinema', score: 95, label: 'Northstar Records', role: 'Creator' },
   { id: 'song-6', title: 'Afterglow', genre: 'Pop', artist: 'Luna Rose', score: 84, label: 'Sunroom Music', role: 'Listener' },
+  { id: 'song-7', title: 'Summer Lights', genre: 'Pop', artist: 'Jamie Blue', score: 90, label: 'Bright Sound', role: 'Creator' },
+  { id: 'song-8', title: 'Open Roads', genre: 'Rock', artist: 'The Wild North', score: 79, label: 'Stone Records', role: 'Listener' },
+  { id: 'song-9', title: 'Quiet Morning', genre: 'Indie', artist: 'Clara Moon', score: 87, label: 'Little Room Music', role: 'Creator' },
+  { id: 'song-10', title: 'City Rain', genre: 'Jazz', artist: 'Miles Parker', score: 91, label: 'Blue Street', role: 'Listener' },
+  { id: 'song-11', title: 'Fire Inside', genre: 'Rock', artist: 'Black River', score: 85, label: 'Stone Records', role: 'Creator' },
+  { id: 'song-12', title: 'Stay Tonight', genre: 'Pop', artist: 'Ava James', score: 82, label: 'Bright Sound', role: 'Listener' },
+  { id: 'song-13', title: 'Coffee Shop', genre: 'Indie', artist: 'The Daydreams', score: 93, label: 'Little Room Music', role: 'Creator' },
+  { id: 'song-14', title: 'Slow Dance', genre: 'Jazz', artist: 'Nina Cole', score: 89, label: 'Blue Street', role: 'Listener' },
+  { id: 'song-15', title: 'Last Goodbye', genre: 'Rock', artist: 'Silver Lines', score: 86, label: 'Voltage Records', role: 'Creator' },
 ]
