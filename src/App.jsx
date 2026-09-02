@@ -1,121 +1,45 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { Alert, Box, Container, Typography } from '@mui/material'
+import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded'
+import SongForm from './components/SongForm'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [songs, setSongs] = useState([])
+  const [message, setMessage] = useState('')
+
+  const addSong = (song) => {
+    setSongs((currentSongs) => [...currentSongs, song])
+    setMessage(`${song.title} was added to your playlist.`)
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Box className="page">
+      <Container maxWidth="md">
+        <Box component="header" className="header">
+          <Box className="logo"><HeadphonesRoundedIcon /></Box>
+          <Box>
+            <Typography component="h1" variant="h5" fontWeight={800}>My Playlist</Typography>
+            <Typography variant="body2" color="text.secondary">Keep your favorite songs in one place.</Typography>
+          </Box>
+        </Box>
 
-      <div className="ticks"></div>
+        <Box component="main" className="main">
+          <Box className="intro">
+            <Typography variant="overline" color="primary">New song</Typography>
+            <Typography component="h2" variant="h3">Add a song</Typography>
+            <Typography color="text.secondary">Fill in the details below to save a song.</Typography>
+          </Box>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          {message && <Alert severity="success" onClose={() => setMessage('')} sx={{ mb: 2 }}>{message}</Alert>}
+          <SongForm onAdd={addSong} />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+          <Typography className="song-count" variant="body2" color="text.secondary">
+            Songs added: {songs.length}
+          </Typography>
+        </Box>
+      </Container>
+    </Box>
   )
 }
 
